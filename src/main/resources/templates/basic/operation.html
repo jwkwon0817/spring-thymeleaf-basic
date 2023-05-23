@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Operation</title>
+</head>
+<body>
+	<ul>
+		<li>
+			Arithmetic Operation
+			<ul>
+				<li>10 + 2 = <span th:text="10 + 2"></span></li>
+				<li>10 % 2 == 0 = <span th:text="10 % 2 == 0"></span></li>
+			</ul>
+		</li>
+		<li>
+			Comparison Operation
+			<ul>
+				<li>1 > 10 = <span th:text="1 &gt; 10"></span></li>
+				<li>1 gt 10 = <span th:text="1 gt 10"></span></li>
+				<li>1 >= 10 = <span th:text="1 >= 10"></span></li>
+				<li>1 ge 10 = <span th:text="1 ge 10"></span></li>
+				<li>1 == 10 = <span th:text="1 == 10"></span></li>
+				<li>1 != 10 = <span th:text="1 != 10"></span></li>
+			</ul>
+		</li>
+		<li>
+			Conditional Expression
+			<ul>
+				<li>(10 % 2 == 0) ? 'Even' : 'Odd' = <span th:text="(10 % 2 == 0) ? 'Even' : 'Odd'"></span></li>
+			</ul>
+		</li>
+		<li>
+			Elvis Operator
+			<ul>
+				<li>${data} ?: 'No Data.' = <span th:text="${data} ?: 'No Data.'"></span></li>
+				<li>${nullData} ?: 'No Data.' = <span th:text="${nullData} ?: 'No Data.'"></span></li>
+			</ul>
+		</li>
+		<li>
+			No-Operation
+			<ul>
+				<li>${data} ?: _ = <span th:text="${data} ?: _">No data.</span></li>
+				<li>${nullData} ?: _ = <span th:text="${nullData} ?: _">No data.</span></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
