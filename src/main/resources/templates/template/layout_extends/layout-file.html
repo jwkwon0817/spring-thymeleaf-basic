@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, content)">
+<head>
+	<meta charset="UTF-8">
+	<title th:replace="${title}">Layout Title</title>
+</head>
+<body>
+	<h1>Layout H1</h1>
+	<div th:replace="${content}">
+		<p>Layout Contents</p>
+	</div>
+	<footer>
+		Layout Footer
+	</footer>
+</body>
+</html>
