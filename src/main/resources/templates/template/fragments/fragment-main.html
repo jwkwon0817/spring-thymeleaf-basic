@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Fragment Main</title>
+</head>
+<body>
+	<h1>Including Part</h1>
+	<h2>Including Part Insert</h2>
+	<div th:insert="~{template/fragments/footer :: copy}"></div>
+
+	<h2>Including Part Replace</h2>
+	<div th:replace="~{template/fragments/footer :: copy}"></div>
+
+	<h2>Simple Expression with Partial</h2>
+	<div th:replace="template/fragments/footer :: copy"></div>
+
+	<h1>Use Parameter</h1>
+	<div th:replace="~{template/fragments/footer :: copyParam ('Data 1', 'Data 2')}"></div>
+</body>
+</html>
