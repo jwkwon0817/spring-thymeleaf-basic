@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+</head>
+<body>
+	<!-- Before Using JavaScript Inline -->
+	<script>
+		let name = [[${username}]];
+		let age = [[${user.age}]];
+		
+		// JavaScript Natural Template
+		let username2 = /*[[${user.username}]]*/ 'test username';
+		
+		// Object
+		let user = [[${user}]];
+	</script>
+
+	<!-- After Using JavaScript Inline -->
+	<script th:inline="javascript">
+		let username = [[${user.username}]];
+		let age = [[${user.age}]];
+		
+		// JavaScript Natural Template
+		let username2 = /*[[${user.username}]]*/ 'test username';
+		
+		// Object
+		let user = [[${user}]];
+	</script>
+
+	<!-- JavaScript Inline Each -->
+	<script th:inline="javascript">
+		[# th:each="user, userStat: ${users}"]
+		let user[[${userStat.count}]] = [[${user}]];
+		[/]
+	</script>
+</body>
+</html>
